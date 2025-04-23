@@ -1,30 +1,36 @@
-﻿using AwarenessChatbot;
+﻿using System;
+using System.Threading.Tasks;
 
-static void Main(string[] args)
+namespace AwarenessChatbot
 {
-    Task.Run(() => VoicePlayer.PlayGreeting());
-    AsciiBanner.Show();
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Play voice greeting asynchronously
+            Task.Run(() => VoicePlayer.PlayGreeting());
 
-    // Optional: pause to let audio/banner play out
-    Thread.Sleep(3000);
+            // Show ASCII banner
+            AsciiBanner.Show();
 
-    // 🌟 Cybersecurity Awareness Welcome Message
-    Console.ForegroundColor = ConsoleColor.Cyan;
-    Console.WriteLine("\n👋 Welcome to the Cybersecurity Awareness Chatbot!");
-    Console.ResetColor();
+            // Optional: pause to let audio and banner finish
+            System.Threading.Thread.Sleep(3000);
 
-    Console.WriteLine("🎯 Purpose: I'm here to help you stay safe online by sharing cybersecurity tips and answering your questions.\n");
+            // Ask user for their name
+            string userName = UserInteraction.GetUserName();
 
-    Console.WriteLine("💬 You can ask me about:");
-    Console.WriteLine("   🔐 Password safety");
-    Console.WriteLine("   🎣 Phishing scams");
-    Console.WriteLine("   🛡️ Antivirus & malware protection");
-    Console.WriteLine("   📱 Mobile security");
-    Console.WriteLine("   🌍 Safe browsing practices\n");
+            // Greet user personally
+            UserInteraction.WelcomeUser(userName);
 
-    Console.WriteLine("Type your name to begin chatting with me! 🧠");
+            // General welcome message
+            Console.WriteLine("Welcome to CyberSecurity Awareness App");
 
-    // Step 3: Ask for name and greet
-    string userName = UserInteraction.GetUserName();
-    UserInteraction.WelcomeUser(userName);
+            // Start the interactive Q&A chatbot
+            Chatbot.StartConversation();
+
+            // Let user know app is closing
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+        }
+    }
 }
