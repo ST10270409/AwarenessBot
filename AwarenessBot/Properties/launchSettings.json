@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AwarenessBot": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
