@@ -1,21 +1,21 @@
-# AwarenessBot 🤖
+# AwarenessBot
 A C# console-based chatbot designed to educate users about cybersecurity, promote online safety, and engage them through interactive features such as quizzes, a password game, and a leaderboard.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 💬 **Smart AI Chat**: Friendly conversation with sentiment awareness (e.g., worried, curious, frustrated).
-- 🔐 **Cybersecurity Tips**: Covers essential topics like passwords, phishing, and online privacy.
-- 🎮 **Mini-Game**: A "Guess the Strong Password" game with multiple attempts.
-- 🧠 **Quiz Mode**: Answer multiple-choice cybersecurity questions and earn points.
-- 🏆 **Leaderboard**: Tracks and displays top quiz scores.
-- 🗂 **Data Persistence**: Saves user preferences and chat history.
-- 📤 **Export Tips**: Save cybersecurity advice to a text file for later.
+- **Smart AI Chat**: Friendly conversation with sentiment awareness (e.g., worried, curious, frustrated).
+- **Cybersecurity Tips**: Covers essential topics like passwords, phishing, and online privacy.
+- **Mini-Game**: A "Guess the Strong Password" game with multiple attempts.
+- **Quiz Mode**: Answer multiple-choice cybersecurity questions and earn points.
+- **Leaderboard**: Tracks and displays top quiz scores.
+- **Data Persistence**: Saves user preferences and chat history.
+- **Export Tips**: Save cybersecurity advice to a text file for later.
 
 ---
 
-## 🛠 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
