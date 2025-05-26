@@ -1,4 +1,11 @@
-﻿using System;
+﻿//References//
+
+//OWASP Password Guidelines: https://owasp.org/www-community/password-special-characters //
+//Microsoft Docs on System.IO: https://learn.microsoft.com/en-us/dotnet/standard/io/ //
+//Sentiment Detection Concepts: https://towardsdatascience.com/basic-sentiment-analysis-using-python-2c6e2a9b3a8d //
+//ChatGPT(OpenAI) – Used for brainstorming logic, tips, and structure//
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
