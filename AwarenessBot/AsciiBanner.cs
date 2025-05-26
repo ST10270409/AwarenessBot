@@ -1,14 +1,17 @@
 ﻿using System;
-using Figgle;
+using Figgle; // Make sure Figgle is referenced
 
 namespace AwarenessChatbot
 {
-    public class AsciiBanner
+    public static class AsciiBanner
     {
         public static void Show()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(FiggleFonts.Doom.Render("Cyber Bot"));
+            Console.WriteLine(FiggleFonts.Standard.Render("CyberBot"));
+            Console.WriteLine("╔════════════════════════════════════════════════╗");
+            Console.WriteLine("║        Welcome to the Cyber Awareness Bot      ║");
+            Console.WriteLine("╚════════════════════════════════════════════════╝");
             Console.ResetColor();
         }
     }

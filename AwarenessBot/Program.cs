@@ -1,35 +1,63 @@
-﻿using System;
+﻿
+using System;
 using System.Threading.Tasks;
 
 namespace AwarenessChatbot
 {
     class Program
     {
-        static void Main(string[] args)
+     public static void Main(string[] args)
         {
-            // Play voice greeting asynchronously
             Task.Run(() => VoicePlayer.PlayGreeting());
-
-            // Show ASCII banner
             AsciiBanner.Show();
-
-            // Optional: pause to let audio and banner finish
             System.Threading.Thread.Sleep(3000);
 
-            // Ask user for their name
             string userName = UserInteraction.GetUserName();
-
-            // Greet user personally
             UserInteraction.WelcomeUser(userName);
 
-            // General welcome message
-            Console.WriteLine("Welcome to CyberSecurity Awareness App");
+            string choice;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\n╔════════════════════════════════════╗");
+                Console.WriteLine("║         [ Main Menu ]              ║");
+                Console.WriteLine("╠════════════════════════════════════╣");
+                Console.WriteLine("║ 1. Cybersecurity Q&A Chatbot       ║");
+                Console.WriteLine("║ 2. Smart AI Chatbot (with mood)    ║");
+                Console.WriteLine("║ 3. Play the Password Game          ║");
+                Console.WriteLine("║ 4. Exit                            ║");
+                Console.WriteLine("╚════════════════════════════════════╝");
+                Console.ResetColor();
 
-            // Start the interactive Q&A chatbot
-            Chatbot.StartConversation();
+                Console.Write("\n> Enter your choice (1–4): ");
+                choice = Console.ReadLine();
 
-            // Let user know app is closing
-            Console.WriteLine("\nPress any key to exit...");
+                switch (choice)
+                {
+                    case "1":
+                        Chatbot.StartConversation();
+                        break;
+                    case "2":
+                        ChatbotAi.StartConversation();
+                        break;
+                    case "3":
+                        ChatbotAi.StartPasswordGame();
+                        break;
+                    case "4":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine("\n[CyberBot] Thank you for learning! Stay safe out there! 👋");
+                        Console.ResetColor();
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("[Warning] Please enter a valid option (1–4).");
+                        Console.ResetColor();
+                        break;
+                }
+            }
+            while (choice != "4");
+
+            Console.WriteLine("\nPress any key to close...");
             Console.ReadKey();
         }
     }
